@@ -1,0 +1,6 @@
+#e1(03Nov2026:15:22:35): source ./xcelium.d/env.d/env.history.03Nov2026_15_22_35
+s1(03Nov2026:15:22:35):  xrun -f files.f +UVM_TESTNAME=apb_series_test +UVM_VERBOSITY=UVM_MEDIUM +UVM_NO_RELNOTES -l series.log 
+#e2(03Nov2026:15:22:45): source ./xcelium.d/env.d/env.history.03Nov2026_15_22_45
+s2(03Nov2026:15:22:45):  xrun -f files.f +UVM_TESTNAME=apb_write_read_test +UVM_VERBOSITY=UVM_MEDIUM +UVM_NO_RELNOTES -l write_read.log 
+#e3(03Nov2026:15:22:53): source ./xcelium.d/env.d/env.history.03Nov2026_15_22_53
+s3(03Nov2026:15:22:53):  xrun -f files.f -clean +define+APB_NO_DUT +UVM_TESTNAME=apb_a2a_test +UVM_VERBOSITY=UVM_MEDIUM +UVM_NO_RELNOTES -l a2a.log 

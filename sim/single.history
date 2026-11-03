@@ -1,0 +1,2 @@
+#e1(03Nov2026:15:19:59): source ./xcelium.d/env.d/env.history.03Nov2026_15_19_59
+s1(03Nov2026:15:19:59):  xrun -f files.f -clean +UVM_TESTNAME=apb_single_test +UVM_VERBOSITY=UVM_MEDIUM +UVM_NO_RELNOTES -l single.log 

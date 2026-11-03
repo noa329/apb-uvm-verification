@@ -1,0 +1,175 @@
+xrun(64): 24.09-s011: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s011: Started on Nov 03, 2026 at 15:22:53 UTC
+xrun
+	-f files.f
+		-uvm
+		-uvmhome CDNS-1.2
+		-access +rwc
+		-timescale 1ns/1ps
+		-incdir ../sv
+		-incdir ../tb
+		../sv/apb_if.sv
+		../sv/apb_pkg.sv
+		../tb/apb_slave.sv
+		../tb/tb_top.sv
+		-top tb_top
+	-clean
+	+define+APB_NO_DUT
+	+UVM_TESTNAME=apb_a2a_test
+	+UVM_VERBOSITY=UVM_MEDIUM
+	+UVM_NO_RELNOTES
+	-l a2a.log
+
+   User defined plus("+") options:
+	+UVM_VERBOSITY=UVM_MEDIUM
+	+UVM_NO_RELNOTES
+
+xrun: *N,CLEAN: Removing existing directory ./xcelium.d.
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /tools/cadence/XCELIUM/24.09.011/tools/methodology/UVM/CDNS-1.2
+file: ../sv/apb_if.sv
+	interface worklib.apb_if:sv
+		errors: 0, warnings: 0
+file: ../sv/apb_pkg.sv
+	package worklib.apb_pkg:sv
+		errors: 0, warnings: 0
+file: ../tb/apb_slave.sv
+	module worklib.apb_slave:sv
+		errors: 0, warnings: 0
+file: ../tb/tb_top.sv
+	module worklib.tb_top:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		apb_pkg
+		tb_top
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tb_top:sv <0x2377655a>
+			streams: 972, words: 1191240
+		worklib.cdns_uvm_pkg:sv <0x7ce786ff>
+			streams: 237, words: 382393
+		worklib.cdns_uvmapi:svp <0x505c61a1>
+			streams:  27, words: 30445
+		worklib.cdns_assert2uvm_pkg:sv <0x2d35f7e6>
+			streams:   3, words:  1824
+		worklib.uvm_pkg:sv <0x690ac279>
+			streams: 5296, words: 8335343
+		worklib.apb_if:sv <0x072349c7>
+			streams:  30, words: 26106
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                        Instances  Unique
+		Modules:                        1       1
+		Interfaces:                     1       1
+		Verilog packages:               5       5
+		Registers:                 17,587  11,841
+		Scalar wires:                   2       -
+		Named events:                  10      18
+		Always blocks:                 24      24
+		Initial blocks:               369     182
+		Parallel blocks:               27      28
+		Pseudo assignments:             2       -
+		Assertions:                     9       9
+		SV Class declarations:        241     357
+		SV Class specializations:     475     475
+		Process Clocks:                 6       1
+		Simulation timescale:         1ps
+	Writing initial simulation snapshot: worklib.tb_top:sv
+Loading snapshot worklib.tb_top:sv .................... Done
+SVSEED default: 1
+xcelium> source /tools/cadence/XCELIUM/24.09.011/tools/xcelium/files/xmsimrc
+xcelium> source /tools/cadence/XCELIUM/24.09.011/tools/methodology/UVM/CDNS-1.2/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO @ 0: reporter [RNTST] Running test apb_a2a_test...
+UVM_INFO /tools/cadence/XCELIUM/24.09.011/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(605) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               apb_a2a_test            -     @1679
+  master_agent             apb_agent               -     @1750
+    driver                 apb_master_driver       -     @2607
+      rsp_port             uvm_analysis_port       -     @2707
+      seq_item_port        uvm_seq_item_pull_port  -     @2657
+    item_collected_port    uvm_analysis_port       -     @1891
+    monitor                apb_monitor             -     @1923
+      item_collected_port  uvm_analysis_port       -     @2760
+    sequencer              apb_sequencer           -     @1956
+      rsp_export           uvm_analysis_export     -     @2016
+      seq_item_export      uvm_seq_item_pull_imp   -     @2576
+      arbitration_queue    array                   0     -    
+      lock_queue           array                   0     -    
+      num_last_reqs        integral                32    'd1  
+      num_last_rsps        integral                32    'd1  
+  slave_agent              apb_agent               -     @1807
+    driver                 apb_slave_driver        -     @3539
+      rsp_port             uvm_analysis_port       -     @3636
+      seq_item_port        uvm_seq_item_pull_port  -     @3587
+    item_collected_port    uvm_analysis_port       -     @2836
+    monitor                apb_monitor             -     @2867
+      item_collected_port  uvm_analysis_port       -     @3689
+    sequencer              apb_sequencer           -     @2866
+      rsp_export           uvm_analysis_export     -     @2955
+      seq_item_export      uvm_seq_item_pull_imp   -     @3507
+      arbitration_queue    array                   0     -    
+      lock_queue           array                   0     -    
+      num_last_reqs        integral                32    'd1  
+      num_last_rsps        integral                32    'd1  
+--------------------------------------------------------------
+
+UVM_INFO ../sv/apb_agent.sv(65) @ 0: uvm_test_top.master_agent [apb_agent] APB agent: role=APB_MASTER, UVM_ACTIVE
+UVM_INFO ../sv/apb_agent.sv(65) @ 0: uvm_test_top.slave_agent [apb_agent] APB agent: role=APB_SLAVE, UVM_ACTIVE
+SDI/Verilog Transaction Recording Facility Version 24.09-s011
+UVM_INFO ../sv/apb_monitor.sv(69) @ 85000: uvm_test_top.master_agent.monitor [apb_monitor] Collected: Addr=0x000000d0 Dir=APB_WRITE WData=0x38894f7d RData=0x00000000 Delay=0 Wait=1
+UVM_INFO ../sv/apb_monitor.sv(69) @ 85000: uvm_test_top.slave_agent.monitor [apb_monitor] Collected: Addr=0x000000d0 Dir=APB_WRITE WData=0x38894f7d RData=0x00000000 Delay=0 Wait=1
+UVM_INFO ../sv/apb_monitor.sv(69) @ 125000: uvm_test_top.master_agent.monitor [apb_monitor] Collected: Addr=0x00000030 Dir=APB_WRITE WData=0x437f7745 RData=0x00000000 Delay=0 Wait=1
+UVM_INFO ../sv/apb_monitor.sv(69) @ 125000: uvm_test_top.slave_agent.monitor [apb_monitor] Collected: Addr=0x00000030 Dir=APB_WRITE WData=0x437f7745 RData=0x00000000 Delay=0 Wait=1
+UVM_INFO ../sv/apb_monitor.sv(69) @ 155000: uvm_test_top.master_agent.monitor [apb_monitor] Collected: Addr=0x00000000 Dir=APB_WRITE WData=0x4b8440c7 RData=0x00000000 Delay=0 Wait=0
+UVM_INFO ../sv/apb_monitor.sv(69) @ 155000: uvm_test_top.slave_agent.monitor [apb_monitor] Collected: Addr=0x00000000 Dir=APB_WRITE WData=0x4b8440c7 RData=0x00000000 Delay=0 Wait=0
+UVM_INFO ../sv/apb_monitor.sv(69) @ 215000: uvm_test_top.master_agent.monitor [apb_monitor] Collected: Addr=0x00000000 Dir=APB_READ WData=0x00000000 RData=0x4b8440c7 Delay=0 Wait=0
+UVM_INFO ../sv/apb_monitor.sv(69) @ 215000: uvm_test_top.slave_agent.monitor [apb_monitor] Collected: Addr=0x00000000 Dir=APB_READ WData=0x00000000 RData=0x4b8440c7 Delay=0 Wait=0
+UVM_INFO ../sv/apb_monitor.sv(69) @ 275000: uvm_test_top.master_agent.monitor [apb_monitor] Collected: Addr=0x00000030 Dir=APB_READ WData=0x00000000 RData=0x437f7745 Delay=0 Wait=3
+UVM_INFO ../sv/apb_monitor.sv(69) @ 275000: uvm_test_top.slave_agent.monitor [apb_monitor] Collected: Addr=0x00000030 Dir=APB_READ WData=0x00000000 RData=0x437f7745 Delay=0 Wait=3
+UVM_INFO ../sv/apb_monitor.sv(69) @ 335000: uvm_test_top.master_agent.monitor [apb_monitor] Collected: Addr=0x000000d0 Dir=APB_READ WData=0x00000000 RData=0x38894f7d Delay=0 Wait=2
+UVM_INFO ../sv/apb_monitor.sv(69) @ 335000: uvm_test_top.slave_agent.monitor [apb_monitor] Collected: Addr=0x000000d0 Dir=APB_READ WData=0x00000000 RData=0x38894f7d Delay=0 Wait=2
+UVM_INFO ../sv/apb_seq_lib.sv(105) @ 335000: uvm_test_top.master_agent.sequencer@@apb_write_read_seq [apb_write_read_seq] Readback check PASSED
+UVM_INFO /tools/cadence/XCELIUM/24.09.011/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 435000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../sv/apb_monitor.sv(76) @ 435000: uvm_test_top.master_agent.monitor [apb_monitor] Collected 6 transfers
+UVM_INFO ../sv/apb_monitor.sv(76) @ 435000: uvm_test_top.slave_agent.monitor [apb_monitor] Collected 6 transfers
+UVM_INFO /tools/cadence/XCELIUM/24.09.011/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_catcher.svh(705) @ 435000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/cadence/XCELIUM/24.09.011/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(851) @ 435000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   21
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+[apb_agent]     2
+[apb_monitor]    14
+[apb_write_read_seq]     1
+
+Simulation complete via $finish(1) at time 435 NS + 59
+/tools/cadence/XCELIUM/24.09.011/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s011: Exiting on Nov 03, 2026 at 15:23:04 UTC  (total: 00:00:11)
